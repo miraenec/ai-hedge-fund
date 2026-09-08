@@ -61,3 +61,4 @@ force_alphabetical_sort_within_sections = true
 
 [tool.poetry.scripts]
 backtester = "src.backtesting.cli:main"
+stocksnow = "src.stocksnow.cli:main"
