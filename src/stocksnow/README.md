@@ -42,9 +42,11 @@ The StockSnow module is included in the AI Hedge Fund project. Make sure you hav
 poetry install
 ```
 
-## Quick Start
+## Usage
 
-### 1. Set up API Key
+### Quick Start
+
+#### 1. Set up API Key
 
 Make sure you have your Financial Datasets API key in your `.env` file:
 
@@ -52,7 +54,7 @@ Make sure you have your Financial Datasets API key in your `.env` file:
 FINANCIAL_DATASETS_API_KEY=your-api-key-here
 ```
 
-### 2. Using the CLI
+#### 2. Using the CLI
 
 Run the interactive dashboard:
 
@@ -65,7 +67,7 @@ This will:
 2. Set up optional price alerts
 3. Show a live dashboard with quotes, technical indicators, and alerts
 
-### 3. Using the Python API
+#### 3. Using the Python API
 
 ```python
 import asyncio
@@ -101,7 +103,7 @@ async def main():
 asyncio.run(main())
 ```
 
-### 4. Using the REST API
+#### 4. Using the REST API
 
 Start the API server:
 
