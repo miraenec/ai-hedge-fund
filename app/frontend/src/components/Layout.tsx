@@ -40,6 +40,11 @@ function LayoutContent({ children }: { children: ReactNode }) {
     openTab(tabData);
   };
 
+  const handleStockSnowClick = () => {
+    const tabData = TabService.createStockSnowTab();
+    openTab(tabData);
+  };
+
   // Add keyboard shortcuts for toggling sidebars and fit view
   useLayoutKeyboardShortcuts(
     () => setIsRightCollapsed(!isRightCollapsed), // Cmd+I for right sidebar
@@ -111,6 +116,7 @@ function LayoutContent({ children }: { children: ReactNode }) {
         onToggleRight={() => setIsRightCollapsed(!isRightCollapsed)}
         onToggleBottom={toggleBottomPanel}
         onSettingsClick={handleSettingsClick}
+        onStockSnowClick={handleStockSnowClick}
       />
 
       {/* Tab Bar - positioned absolutely like bottom panel */}

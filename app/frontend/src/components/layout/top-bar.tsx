@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { PanelBottom, PanelLeft, PanelRight, Settings } from 'lucide-react';
+import { Activity, PanelBottom, PanelLeft, PanelRight, Settings } from 'lucide-react';
 
 interface TopBarProps {
   isLeftCollapsed: boolean;
@@ -10,6 +10,7 @@ interface TopBarProps {
   onToggleRight: () => void;
   onToggleBottom: () => void;
   onSettingsClick: () => void;
+  onStockSnowClick?: () => void;
 }
 
 export function TopBar({
@@ -20,6 +21,7 @@ export function TopBar({
   onToggleRight,
   onToggleBottom,
   onSettingsClick,
+  onStockSnowClick,
 }: TopBarProps) {
   return (
     <div className="absolute top-0 right-0 z-40 flex items-center gap-0 py-1 px-2 bg-panel/80">
@@ -70,6 +72,20 @@ export function TopBar({
 
       {/* Divider */}
       <div className="w-px h-5 bg-ramp-grey-700 mx-1" />
+
+      {/* StockSnow */}
+      {onStockSnowClick && (
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={onStockSnowClick}
+          className="h-8 w-8 p-0 text-muted-foreground hover:text-foreground hover:bg-ramp-grey-700 transition-colors"
+          aria-label="Open StockSnow"
+          title="Open StockSnow Monitor"
+        >
+          <Activity size={16} />
+        </Button>
+      )}
 
       {/* Settings */}
       <Button

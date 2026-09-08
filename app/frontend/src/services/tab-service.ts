@@ -1,10 +1,11 @@
 import { Settings } from '@/components/settings/settings';
+import { StockMonitor } from '@/components/stocksnow/stock-monitor';
 import { FlowTabContent } from '@/components/tabs/flow-tab-content';
 import { Flow } from '@/types/flow';
 import { ReactNode, createElement } from 'react';
 
 export interface TabData {
-  type: 'flow' | 'settings';
+  type: 'flow' | 'settings' | 'stocksnow';
   title: string;
   flow?: Flow;
   metadata?: Record<string, any>;
@@ -21,6 +22,9 @@ export class TabService {
       
       case 'settings':
         return createElement(Settings);
+      
+      case 'stocksnow':
+        return createElement(StockMonitor);
       
       default:
         throw new Error(`Unsupported tab type: ${tabData.type}`);
@@ -44,6 +48,14 @@ export class TabService {
     };
   }
 
+  static createStockSnowTab(): TabData & { content: ReactNode } {
+    return {
+      type: 'stocksnow',
+      title: 'StockSnow',
+      content: TabService.createTabContent({ type: 'stocksnow', title: 'StockSnow' }),
+    };
+  }
+
   // Restore tab content for persisted tabs (used when loading from localStorage)
   static restoreTabContent(tabData: TabData): ReactNode {
     return TabService.createTabContent(tabData);
@@ -60,6 +72,9 @@ export class TabService {
       
       case 'settings':
         return TabService.createSettingsTab();
+      
+      case 'stocksnow':
+        return TabService.createStockSnowTab();
       
       default:
         throw new Error(`Cannot restore unsupported tab type: ${savedTab.type}`);
