@@ -49,6 +49,7 @@ By using this software, you agree to use it solely for learning purposes.
 - [How to Run](#how-to-run)
   - [⌨️ Command Line Interface](#️-command-line-interface)
   - [🖥️ Web Application](#️-web-application)
+  - [📊 StockSnow - Real-time Stock Monitor](#-stocksnow---real-time-stock-monitor)
 - [How to Contribute](#how-to-contribute)
 - [Feature Requests](#feature-requests)
 - [License](#license)
@@ -138,6 +139,34 @@ The new way to run the AI Hedge Fund is through our web application that provide
 Please see detailed instructions on how to install and run the web application [here](https://github.com/virattt/ai-hedge-fund/tree/main/app).
 
 <img width="1721" alt="Screenshot 2025-06-28 at 6 41 03 PM" src="https://github.com/user-attachments/assets/b95ab696-c9f4-416c-9ad1-51feb1f5374b" />
+### 📊 StockSnow - Real-time Stock Monitor
+
+**StockSnow** is a comprehensive real-time stock monitoring and analysis system that provides live quotes, price alerts, watchlist management, and technical analysis.
+
+#### Features
+- 📊 **Real-time monitoring** - Live price updates every 5 seconds
+- 🔔 **Price alerts** - Get notified when stocks hit your targets
+- 📋 **Watchlist management** - Organize stocks into custom lists
+- 🔧 **Technical analysis** - RSI, MACD, Moving Averages, Bollinger Bands, Support/Resistance
+- 🖥️ **Multiple interfaces** - CLI dashboard, REST API, Python library
+
+#### Quick Start
+
+**Run the CLI Dashboard:**
+```bash
+poetry run stocksnow
+```
+
+**Run the REST API:**
+```bash
+poetry run python -m src.stocksnow.api
+# Access at http://localhost:8000
+# API docs at http://localhost:8000/docs
+```
+
+For detailed documentation, see [StockSnow README](src/stocksnow/README.md) and [Feature Documentation](STOCKSNOW_FEATURE.md).
+
+
 
 
 ## How to Contribute
